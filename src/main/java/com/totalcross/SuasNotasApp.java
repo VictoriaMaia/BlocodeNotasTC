@@ -11,6 +11,7 @@ import totalcross.ui.icon.Icon;
 import totalcross.ui.SideMenuContainer;
 import totalcross.ui.icon.MaterialIcons;
 import totalcross.sys.Settings;
+import totalcross.ui.ImageControl;
 
 public class SuasNotasApp extends MainWindow {
     SideMenuContainer sideMenu;
@@ -25,9 +26,6 @@ public class SuasNotasApp extends MainWindow {
         // Initializing the images.
         Images.loadImages();
 
-        // Swapping to the container responsible for showing the home screen.
-        // swap(new HomeView());
-
         SideMenuContainer.Item home = new SideMenuContainer.Item("Anotações", MaterialIcons._HOME, Colors.COLOR_ORANGE, ()-> {return new HomeView();});
         SideMenuContainer.Item sample = new SideMenuContainer.Item("Criar nota", MaterialIcons._NOTE, Colors.COLOR_ORANGE, ()-> {return new CreateView();});
 
@@ -35,12 +33,23 @@ public class SuasNotasApp extends MainWindow {
 
         sideMenu.topMenu.header = new Container(){
             public void initUI(){
-                setBackColor(Colors.COLOR_Dark_ORANGE);
-                Label title = new Label("Suas Notas", CENTER, Colors.COLOR_WHITE, false);
-                title.setForeColor(Colors.COLOR_WHITE);
-                title.setFont(Font.getFont("Lato Bold", false, this.getFont().size+10));
-                add(title, LEFT+MaterialConstants.GAP45, BOTTOM-MaterialConstants.GAP45);
+                setBackColor(Colors.COLOR_DarkDark_ORANGE);
+
+                ImageControl iUser = new ImageControl(Images.iPerfil);
+                iUser.scaleToFit = true;
                 
+                Label lUser = new Label("Nome Usuário", CENTER, Colors.COLOR_WHITE, false);
+                lUser.setForeColor(Colors.COLOR_WHITE);
+
+                Label lEmail = new Label("usuario@email.com", CENTER, Colors.COLOR_WHITE, false);
+                lEmail.setForeColor(Colors.COLOR_WHITE);
+                
+                // lUser.setFont(Font.getFont("Lato Bold", false, this.getFont().size-1));
+                // lEmail.setFont(Font.getFont("Lato Bold", false, this.getFont().size-1));
+
+                add(iUser, LEFT+MaterialConstants.GAP15, TOP+MaterialConstants.GAP15);
+                add(lUser, LEFT+MaterialConstants.GAP15, AFTER+MaterialConstants.GAP4);
+                add(lEmail, LEFT+MaterialConstants.GAP15, AFTER+MaterialConstants.GAP4);
             }
         };
 

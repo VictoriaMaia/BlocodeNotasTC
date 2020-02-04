@@ -2,61 +2,66 @@ package com.totalcross.View;
 import com.totalcross.Util.*;
 
 import totalcross.ui.Container;
-import totalcross.ui.Label;
 import totalcross.ui.ScrollContainer;
 import totalcross.ui.Button;
 import totalcross.ui.Edit;
+import totalcross.ui.MultiEdit;
+import totalcross.ui.Label;
 
 public class CreateView extends Container {
     // Declaring the variables.
-    // private Label lTitle, lNote;
+    private Label lTitle, lNote;
     private Container cNovaNota, cOptions;
-    private ScrollContainer scNote;
     private Button bSave, bCancel;
-    private Edit eTitle, eNote;
+    private Edit eTitle;
+    private MultiEdit eNote;
 
 	public void initUI() {
         // Initializing the variables.
+        lTitle = new Label("Título: ");
+        lNote = new Label("Nota: ");
+
         // EDIT
         eTitle = new Edit();
-        eTitle.caption = "Título: ";
-        eTitle.setBackColor(Colors.COLOR_Light_ORANGE);
-        eTitle.transparentBackground = true;
+        // eTitle.caption = "OutlinedEdit";
+        // eTitle.captionColor = Colors.COLOR_RED;
+        eTitle.setBackColor(Colors.COLOR_ORANGE);
+        // eTitle.transparentBackground = true;
 
-        eNote = new Edit();
-        eNote.caption = "Nota: ";
-        eNote.setBackColor(Colors.COLOR_Light_ORANGE);
-        eNote.transparentBackground = true;
+        eNote = new MultiEdit();
+        // eNote.caption = "OutlinedEdit";
+        // eNote.captionColor = Colors.COLOR_RED;
+        eNote.setBackColor(Colors.COLOR_ORANGE);
+        // eNote.transparentBackground = true;
 
-        // LABEL
-        // lTitle = new Label("Feira1");
-        
         // BUTTON
         bSave = new Button("SALVAR");
-		bSave.transparentBackground = true;
-		bSave.setBorder(Container.BORDER_NONE);
+        // bSave.transparentBackground = true;
+        bSave.setBackForeColors(Colors.COLOR_Dark_ORANGE, Colors.COLOR_WHITE);
+		bSave.setBorder(Container.BORDER_ROUNDED);
         bSave.setDoEffect(false);
         
         bCancel = new Button("CANCELAR");
-		bCancel.transparentBackground = true;
-		bCancel.setBorder(Container.BORDER_NONE);
+        // bCancel.transparentBackground = true;
+        bCancel.setBackForeColors(Colors.COLOR_Dark_ORANGE, Colors.COLOR_WHITE);
+		bCancel.setBorder(Container.BORDER_ROUNDED);
 		bCancel.setDoEffect(false);
     
         // CONTAINER
         cNovaNota = new Container();
         cOptions = new Container();
+        // cNote = newContainer();
         
-        // SCROOLCONTAINER
-        scNote = new ScrollContainer(false, true); //VERTICAL
 
         // ADDING THE CONTAINERS AND SCROLLCONTAINER IN HOME SCREE
         add(cNovaNota, LEFT, TOP, SCREENSIZE, SCREENSIZE+MaterialConstants.GAP80);
-            cNovaNota.add(eTitle, LEFT, TOP, PARENTSIZE, PARENTSIZE+MaterialConstants.GAP30);
-            cNovaNota.add(scNote, LEFT, AFTER+MaterialConstants.GAP10, PARENTSIZE, PARENTSIZE+MaterialConstants.GAP45);
-            scNote.add(eNote, LEFT, TOP, PARENTSIZE, PARENTSIZE);
+            cNovaNota.add(lTitle, LEFT, TOP, PARENTSIZE, PARENTSIZE+MaterialConstants.GAP4);
+            cNovaNota.add(eTitle, LEFT, AFTER+MaterialConstants.GAP4, PARENTSIZE, PARENTSIZE+MaterialConstants.GAP10);
+            cNovaNota.add(lNote, LEFT, AFTER+MaterialConstants.GAP4, PARENTSIZE, PARENTSIZE+MaterialConstants.GAP4);
+            cNovaNota.add(eNote, LEFT, AFTER+MaterialConstants.GAP10, PARENTSIZE, PARENTSIZE+MaterialConstants.GAP60);
         add(cOptions, LEFT, AFTER, SCREENSIZE, SCREENSIZE+MaterialConstants.GAP15);
-            cOptions.add(bSave, LEFT, CENTER);
-            cOptions.add(bCancel, RIGHT, CENTER);
+            cOptions.add(bSave, LEFT+MaterialConstants.GAP10, TOP);
+            cOptions.add(bCancel, RIGHT-MaterialConstants.GAP10, TOP);
 
 	}
 }

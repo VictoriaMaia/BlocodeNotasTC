@@ -6,6 +6,7 @@ import totalcross.ui.Label;
 import totalcross.ui.ScrollContainer;
 import totalcross.ui.Button;
 import totalcross.ui.Edit;
+import totalcross.ui.font.Font;
 
 public class HomeView extends Container {
     // Declaring the variables.
@@ -26,8 +27,12 @@ public class HomeView extends Container {
 
         // LABEL
         lTitle1 = new Label("Feira1");
+        lTitle1.setFont(Font.getFont("Lato Bold", false, this.getFont().size+3));
         lTitle2 = new Label("Feira2");
+        lTitle2.setFont(Font.getFont("Lato Bold", false, this.getFont().size+3));
         lTitle3 = new Label("Feira3");
+        lTitle3.setFont(Font.getFont("Lato Bold", false, this.getFont().size+3));
+
         lFeira1 = new Label("Comprar:\n1-Pão\n2-Leite\n3-Ovo\n...");
         lFeira2 = new Label("Comprar:\n1-Pão\n2-Leite\n3-Ovo\n...");
         lFeira3 = new Label("Comprar:\n1-Pão\n2-Leite\n3-Ovo\n...");
@@ -61,7 +66,6 @@ public class HomeView extends Container {
         cAnot4.setBorderStyle(BORDER_ROUNDED);
         cAnot4.borderColor = Colors.COLOR_Light_ORANGE; 
         cAnot4.setBackColor(Colors.COLOR_Light_ORANGE);
-
         
 
         // SCROOLCONTAINER
@@ -71,15 +75,13 @@ public class HomeView extends Container {
         add(scAnots, LEFT, TOP, SCREENSIZE, SCREENSIZE+MaterialConstants.GAP80);
             scAnots.add(cAnot1, CENTER, AFTER+MaterialConstants.GAP15, PARENTSIZE+MaterialConstants.GAP90, PARENTSIZE+MaterialConstants.GAP30);
                 cAnot1.add(lTitle1, LEFT, TOP);
-                cAnot1.add(lFeira1, LEFT, AFTER);
+                cAnot1.add(lFeira1, LEFT, AFTER+MaterialConstants.GAP4);
             scAnots.add(cAnot2, CENTER, AFTER+MaterialConstants.GAP10, PARENTSIZE+MaterialConstants.GAP90, PARENTSIZE+MaterialConstants.GAP30);
                 cAnot2.add(lTitle2, LEFT, TOP);
-                cAnot2.add(lFeira2, LEFT, AFTER);
+                cAnot2.add(lFeira2, LEFT, AFTER+MaterialConstants.GAP4);
             scAnots.add(cAnot3, CENTER, AFTER+MaterialConstants.GAP10, PARENTSIZE+MaterialConstants.GAP90, PARENTSIZE+MaterialConstants.GAP30);
                 cAnot3.add(lTitle3, LEFT, TOP);
-                cAnot3.add(lFeira3, LEFT, AFTER);
-            // scAnots.add(cAnot4, CENTER, AFTER+10, PARENTSIZE+90, PARENTSIZE+30);
-            // scAnots.add(cAnot5, CENTER, AFTER+10, PARENTSIZE+90, PARENTSIZE+30);
+                cAnot3.add(lFeira3, LEFT, AFTER+MaterialConstants.GAP4);
 
         add(cBottom, LEFT, BOTTOM, SCREENSIZE, SCREENSIZE+MaterialConstants.GAP10);
             cBottom.add(eBusca, LEFT, CENTER);
