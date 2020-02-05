@@ -1,5 +1,5 @@
  
-package com.totalcross.Util;
+package com.totalcross.util;
 
 import totalcross.util.UnitsConverter;
 import totalcross.ui.Control;

@@ -1,12 +1,12 @@
-package com.totalcross.View;
-import com.totalcross.Util.*;
+package com.totalcross.view;
 
+import com.totalcross.util.*;
 import totalcross.ui.Container;
-import totalcross.ui.ScrollContainer;
 import totalcross.ui.Button;
 import totalcross.ui.Edit;
 import totalcross.ui.MultiEdit;
 import totalcross.ui.Label;
+import totalcross.ui.dialog.MessageBox;
 
 public class CreateView extends Container {
     // Declaring the variables.
@@ -23,26 +23,18 @@ public class CreateView extends Container {
 
         // EDIT
         eTitle = new Edit();
-        // eTitle.caption = "OutlinedEdit";
-        // eTitle.captionColor = Colors.COLOR_RED;
         eTitle.setBackColor(Colors.COLOR_ORANGE);
-        // eTitle.transparentBackground = true;
 
         eNote = new MultiEdit();
-        // eNote.caption = "OutlinedEdit";
-        // eNote.captionColor = Colors.COLOR_RED;
         eNote.setBackColor(Colors.COLOR_ORANGE);
-        // eNote.transparentBackground = true;
 
         // BUTTON
         bSave = new Button("SALVAR");
-        // bSave.transparentBackground = true;
         bSave.setBackForeColors(Colors.COLOR_Dark_ORANGE, Colors.COLOR_WHITE);
 		bSave.setBorder(Container.BORDER_ROUNDED);
         bSave.setDoEffect(false);
         
         bCancel = new Button("CANCELAR");
-        // bCancel.transparentBackground = true;
         bCancel.setBackForeColors(Colors.COLOR_Dark_ORANGE, Colors.COLOR_WHITE);
 		bCancel.setBorder(Container.BORDER_ROUNDED);
 		bCancel.setDoEffect(false);
@@ -50,7 +42,6 @@ public class CreateView extends Container {
         // CONTAINER
         cNovaNota = new Container();
         cOptions = new Container();
-        // cNote = newContainer();
         
 
         // ADDING THE CONTAINERS AND SCROLLCONTAINER IN HOME SCREE
@@ -63,14 +54,15 @@ public class CreateView extends Container {
             cOptions.add(bSave, LEFT+MaterialConstants.GAP10, TOP);
             cOptions.add(bCancel, RIGHT-MaterialConstants.GAP10, TOP);
 
+        bCancel.addPressListener((event) -> {
+            try{
+                eTitle.setText("");
+                eNote.setText("");
+            }catch (Exception ee) {
+				MessageBox.showException(ee, true);
+			}
+        });
+
 	}
 }
 
-    // public void onEvent(Event event){
-    //     if (event.type == ControlEvent.PRESSED){
-    //         if (event.target == btn1){
-    //             // ... handle btn1 being pressed
-    //         }
-    //     }
-    // }
-    

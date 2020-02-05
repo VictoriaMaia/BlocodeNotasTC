@@ -1,4 +1,4 @@
-package com.totalcross.Util;
+package com.totalcross.util;
 
 import totalcross.sys.Settings;
 import totalcross.ui.dialog.MessageBox;

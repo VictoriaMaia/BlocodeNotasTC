@@ -1,12 +1,11 @@
 package com.totalcross;
 
-import com.totalcross.Util.*;
-import com.totalcross.View.*;
+import com.totalcross.util.*;
+import com.totalcross.view.*;
 
 import totalcross.ui.MainWindow;
 import totalcross.ui.Container;
 import totalcross.ui.Label;
-import totalcross.ui.font.Font;
 import totalcross.ui.icon.Icon;
 import totalcross.ui.SideMenuContainer;
 import totalcross.ui.icon.MaterialIcons;
@@ -27,9 +26,9 @@ public class SuasNotasApp extends MainWindow {
         Images.loadImages();
 
         SideMenuContainer.Item home = new SideMenuContainer.Item("Anotações", MaterialIcons._HOME, Colors.COLOR_ORANGE, ()-> {return new HomeView();});
-        SideMenuContainer.Item sample = new SideMenuContainer.Item("Criar nota", MaterialIcons._NOTE, Colors.COLOR_ORANGE, ()-> {return new CreateView();});
+        SideMenuContainer.Item create = new SideMenuContainer.Item("Criar nota", MaterialIcons._NOTE, Colors.COLOR_ORANGE, ()-> {return new CreateView();});
 
-        sideMenu = new SideMenuContainer(null, home, sample);
+        sideMenu = new SideMenuContainer(null, home, create);
 
         sideMenu.topMenu.header = new Container(){
             public void initUI(){

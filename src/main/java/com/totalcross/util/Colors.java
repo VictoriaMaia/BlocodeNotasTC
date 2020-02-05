@@ -1,4 +1,4 @@
-package com.totalcross.Util;
+package com.totalcross.util;
 
 public class Colors {
 	public static final int COLOR_WHITE = 0xFFFFFF;
