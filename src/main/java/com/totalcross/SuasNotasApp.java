@@ -25,8 +25,8 @@ public class SuasNotasApp extends MainWindow {
         // Initializing the images.
         Images.loadImages();
 
-        SideMenuContainer.Item home = new SideMenuContainer.Item("Anotações", MaterialIcons._HOME, Colors.COLOR_ORANGE, ()-> {return new HomeView();});
-        SideMenuContainer.Item create = new SideMenuContainer.Item("Criar nota", MaterialIcons._NOTE, Colors.COLOR_ORANGE, ()-> {return new CreateView();});
+        SideMenuContainer.Item home = new SideMenuContainer.Item("Annotations", MaterialIcons._HOME, Colors.COLOR_ORANGE, ()-> {return new HomeView();});
+        SideMenuContainer.Item create = new SideMenuContainer.Item("Create note", MaterialIcons._NOTE, Colors.COLOR_ORANGE, ()-> {return new CreateView();});
 
         sideMenu = new SideMenuContainer(null, home, create);
 
@@ -37,10 +37,10 @@ public class SuasNotasApp extends MainWindow {
                 ImageControl iUser = new ImageControl(Images.iPerfil);
                 iUser.scaleToFit = true;
                 
-                Label lUser = new Label("Nome Usuário", CENTER, Colors.COLOR_WHITE, false);
+                Label lUser = new Label("User name", CENTER, Colors.COLOR_WHITE, false);
                 lUser.setForeColor(Colors.COLOR_WHITE);
 
-                Label lEmail = new Label("usuario@email.com", CENTER, Colors.COLOR_WHITE, false);
+                Label lEmail = new Label("user@email.com", CENTER, Colors.COLOR_WHITE, false);
                 lEmail.setForeColor(Colors.COLOR_WHITE);
                 
                 // lUser.setFont(Font.getFont("Lato Bold", false, this.getFont().size-1));

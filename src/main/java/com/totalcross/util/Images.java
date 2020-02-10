@@ -8,20 +8,16 @@ public class Images {
 	// Declaring the variables.
 	public static Image iLupa, iPerfil;
 
-	// static double scale0060 = Settings.isIOS() ? 1 : 0.060;
-	static double scale03 = Settings.isIOS() ? 1 : 0.15;
-	// static double scale01 = Settings.isIOS() ? 1 : 0.1;
-	// static double scale08 = Settings.isIOS() ? 1 : 0.8;
-	
+	static double scale015 = Settings.isIOS() ? 1 : 0.15;
 	
 	public static void loadImages(){
 		try {
 			// Trying the initialize the variables.
 			iLupa = new Image("images/Search.png");
-			iPerfil = new Image("images/Perfil2.png");
-			iPerfil = iPerfil.scaledBy(scale03, scale03);		
 
-		
+			iPerfil = new Image("images/Perfil2.png");
+			iPerfil = iPerfil.scaledBy(scale015, scale015);		
+
 		} catch (Exception e) {
 			MessageBox.showException(e, true);
 		}	
